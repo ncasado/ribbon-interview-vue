@@ -8,6 +8,7 @@ You should implement features using the vuetify library.
 
 * Clone/Fork the repo
 * Create a pull request for each issue listed https://github.com/roundupapp/ribbon-interview-vue/issues
+* Merge the pull requests into your repo so the repo can be run and tested.
 
 ## What not to do
 * Open a pull request to the main repo
