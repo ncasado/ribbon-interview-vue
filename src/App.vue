@@ -56,12 +56,7 @@
                 </v-responsive>
               </v-col>
               <v-sheet width="400" class="mx-auto">
-                <v-form v-model="valid" validate-on="submit" @submit.prevent="submit">
-                  <v-textarea v-model="message" :rules="messageRules" label="Message"></v-textarea>
-                  <v-text-field v-model="email" :rules="emailRules" label="Email"></v-text-field>
-                  <v-text-field v-model="donor_id" label="Donor Id"></v-text-field>
-                  <v-btn type="submit" block class="mt-2">Send</v-btn>
-                </v-form>
+                <MessageForm />
               </v-sheet>
             </v-row>
           </v-container>
@@ -85,39 +80,13 @@
 
 <script>
 import DonationTable from './components/DonationTable.vue';
+import MessageForm from './components/MessageForm.vue';
 
 export default {
   name: 'App',
-
-  data() {
-    return {
-      valid: false,
-      email: '',
-      donor_id: '',
-      message: '',
-      emailRules: [
-        (value) => {
-          if (value) return true;
-
-          return 'E-mail is required.';
-        },
-      ],
-      messageRules: [
-        (value) => {
-          if (value) return true;
-
-          return 'Message is required.';
-        },
-      ],
-    };
-  },
-  methods: {
-    async submit() {
-      // Send message to server.
-    },
-  },
   components: {
     DonationTable,
+    MessageForm,
   },
 };
 </script>
